@@ -1,0 +1,57 @@
+
+ul, li, ol{
+
+  text-decoration: none;
+  list-style: none;
+  text-align: left;
+}
+
+body{
+  background-color: ##ffffff;
+}
+
+#{
+font-family: 'Nunito', sans-serif;
+}
+
+.bg-green{
+background-color: #588f5a!important;
+
+}
+
+.ion-ios-search-strong{
+  color: white;
+}
+
+
+.container{
+margin-top: 10vw;
+}
+
+.alling{
+text-align: center;
+justify-content: center;
+
+}
+
+.borcua{
+border: solid 1px, #26882d;
+
+}
+
+.oelem{
+display: none;
+
+}
+
+.active{
+color:#2f3d24;
+
+}
+
+.card-body{
+
+padding: 3vw;
+margin: 2vw 0;
+
+}
