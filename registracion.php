@@ -23,10 +23,10 @@ require_once("includes/header-nav.php");
 					<div class="panel-heading">
 						<div class="row d-flex justify-content-around">
 							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">Login</a>
+								<a href="#"onclick="showlogin()" class="active" id="login-form-link">Login</a>
 							</div>
 							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
+								<a href="#" onclick="showRegister()" id="register-form-link">Register</a>
 							</div>
 						</div>
 						<hr>
@@ -62,9 +62,51 @@ require_once("includes/header-nav.php");
 										</div>
 									</div>
 								</form>
+
 								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+
+                  <div class="form-group">
+                      <label for="nombre"><strong>Nombre:</strong></label>
+                      <input class="form-control" type="text" name="nombre" id="nombre">
+                  </div>
+                    <br>
+                  <div class="form-group">
+                    <label for="apellido"><strong>Apellido:</strong></label>
+                    <input class="form-control" type="text" name="apellido" id="apellido">
+                  </div>
+                    <br>
+                  <div class="form-group">
+                    <label for='password'><strong>Teléfono de Contacto:</strong></label>
+                    <input class="form-control" type="text" name='number' id='number'>
+                  </div>
+                    <br>
+                  <div class="form-group">
+                    <label for='username'><strong>Domicilio:</strong></label>
+                    <input class="form-control" type='text' name='direccion' id='direccion'>
+                  </div>
+                    <br>
+                  <div class="form-group">
+                      <label for="email"><strong>E-mail:</strong></label>
+                      <input class="form-control" type="email" name="email" id="email">
+                  </div>
+                  <div class="form-group">
+                      <label for="Nombre_de_Usuario"><strong>Nombre de Usuario:</strong></label>
+                      <input class="form-control" type="text" name="Nombre_de_Usuario" id="Nombre_de_Usuario">
+                  </div>
+                  <div class="form-group">
+                      <label for="contraseña"><strong>Contraseña:</strong></label>
+                      <input class="form-control" type="password" name="conraseña" id="contraseña">
+                  </div>
+
+                    <br>
+                  <div class="form-group">
+                    <button class="btn btn-success" type="submit"><strong>Registrarme</strong></button>
+                  </div>
+                    <!-- </fieldset> -->
+                    </form>
+
+                  <!-- <div class="form-group">
+										<input class="form-control" type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
@@ -79,10 +121,10 @@ require_once("includes/header-nav.php");
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-											</div>
-										</div>
-									</div>
-								</form>
+											</div> -->
+										<!-- </div>
+									</div> -->
+
 							</div>
 						</div>
 					</div>
@@ -104,5 +146,15 @@ require_once("includes/header-nav.php");
     <script src="js/jquery-3.3.1.min.js"></script>
     <!--bootstrap  -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      function showRegister() {
+        $("#login-form").hide();
+        $("#register-form").show();
+      }
+      function showlogin(){
+        $("#register-form").hide ();
+        $("#login-form").show();
+      }
+    </script>
   </body>
 </html>

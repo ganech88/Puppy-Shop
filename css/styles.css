@@ -55,3 +55,29 @@ padding: 3vw;
 margin: 2vw 0;
 
 }
+
+.form-control:focus {
+  border: 2px solid #23a36a;
+  box-shadow: none;
+}
+
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(46, 92, 6, 0.6);
+  color: #fff;
+}
+
+.copyright {
+  background-color: #1a252f;
+}
+
+.img{
+  width: 10%;
+  float: left;
+  margin: auto;
+}
+
+.img img{
+  width: 100%;
+}
