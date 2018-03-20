@@ -62,21 +62,21 @@ margin: 2vw 0;
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: rgba(46, 92, 6, 0.6);
   color: #fff;
 }
 
-.copyright {
-  background-color: #1a252f;
+.container final {
+  background-color: #588f5a;
 }
 
 .img{
-  width: 10%;
+  width: 20%;
   float: left;
   margin: auto;
-}
+  }
 
 .img img{
   width: 100%;
