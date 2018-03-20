@@ -17,13 +17,6 @@ require_once("includes/header-nav.php");
 </header>
 
 
-
-
-
-<footer>
-
-
-</footer>
     <!-- Jquery -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!--bootstrap  -->
