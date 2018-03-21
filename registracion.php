@@ -97,7 +97,12 @@
                   </div>
                   <div class="form-group">
                       <label for="contraseña"><strong>Contraseña:</strong></label>
-                      <input class="form-control" type="password" name="conraseña" id="contraseña">
+                      <input class="form-control" type="password" name="contraseña" id="contraseña">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="contraseña"><strong>Confirmar Contraseña:</strong></label>
+                      <input class="form-control" type="password" name="contraseña" id="contraseña">
                   </div>
 
                     <br>
