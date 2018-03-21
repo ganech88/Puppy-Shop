@@ -26,8 +26,8 @@
       </div>
 
 
-<div class="container caja">
-	<div class="row">
+<div class="container caja bg-transparent">
+	<div class="row ">
 	    <ul id="accordion" class="col-sm-6 col-md-12">
 
 
@@ -157,8 +157,8 @@
 
     </div>
   </div>
-  
 </div>
+</ul>
 
 <?php
 require_once("./includes/footer.php");
