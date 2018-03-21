@@ -34,8 +34,8 @@
   <!-- Question one -->
 
 	      <li>
-	       <div id="choose" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
-	        Necesito estar registrado para realizar una compra?
+	       <div id="choose" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="boton-preguntas" >
+	        ¿Necesito estar registrado para realizar una compra?
 	        <span class="fa fa-chevron-up fa-1x text-info pull-right"></span>
 	       </div>
 
@@ -49,8 +49,8 @@
 	 <!-- Question two -->
 
 	      <li>
-	       <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-	        Cómo se puede pagar?
+	       <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	        ¿Cómo se puede pagar?
 	        <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	       </div>
 
@@ -65,8 +65,8 @@
 	  <!-- Question three -->
 
 	      <li>
-	       <div class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-	        Se realizan entregas a domicilio? Y al interior del país?
+	       <div class="collapsed boton-preguntas"data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="boton-preguntas">
+	        ¿Se realizan entregas a domicilio? Y al interior del país?
 	        <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	       </div>
 
@@ -80,8 +80,8 @@
 	   <!-- Question Four -->
 
 	        <li>
-	         <div class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-	          Cuánto tiempo demora la entrega?
+	         <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="boton-preguntas">
+	          ¿Cuánto tiempo demora la entrega?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
 
@@ -95,7 +95,7 @@
       <!-- question Five -->
 
           <li>
-	         <div class="collapseFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+	         <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="boton-preguntas">
 	            Mi producto, ¿Tiene devolución?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
@@ -110,7 +110,7 @@
       <!-- question Six -->
 
           <li>
-	         <div class="collapseSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+	         <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="boton-preguntas">
 	          ¿Se realizan compras al por mayor?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
@@ -125,7 +125,7 @@
       <!-- question Seven -->
 
           <li>
-	         <div class="collapseSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+	         <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="boton-preguntas">
 	            ¿Qué hago si el producto está agotado?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
@@ -141,13 +141,13 @@
       <!-- question Eight -->
 
           <li>
-	         <div class="collapseEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+	         <div class="collapsed boton-preguntas" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="boton-preguntas">
 	            ¿Qué garantía tienen mis productos?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
 
            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
-            <div class="card-body">
+            <div class="card-body" class="boton-preguntas">
              Para Puppy-Shop la calidad es lo primero. Comprobamos exhaustivamente todos nuestros productos para asegurarnos de que están en óptimas Sin embargo, a veces resulta inevitable que se entregue un producto defectuoso.
              Si un producto que compraste en nuestra tienda online presenta defectos de calidad y quieres devolverlo, deberás hacerlo en nuestra tienda online. En cuanto lo recibamos, nuestro departamento de calidad procederá a inspeccionarlo.
              Te reembolsaremos el importe del producto tanto si, una vez realizada la comprobación, observamos que presenta defectos.  Puppy-Shop te indemnizará por los gastos que hubiera podido causar su producto defectuoso.
