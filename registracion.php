@@ -65,7 +65,7 @@
 									</div>
 								</form>
 
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
+								<form id="register-form"  method="post" role="form" style="display: none;">
 
                   <div class="form-group">
                       <label for="nombre"><strong>Nombre:</strong></label>
