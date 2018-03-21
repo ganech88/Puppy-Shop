@@ -9,26 +9,30 @@
       <link rel="stylesheet" href="css/styles.css">
     <title>Preguntas Frecuentes</title>
   </head>
-  <body>
-<header>
-  <?php
-require_once("includes/header-nav.php");
-   ?>
-</header>
-<br><br>
 
-<div class="contenedor">
-  <br>
+<body>
 
-  <div class="titulo success">
-    <h3> Preguntas Frecuentes </h3>
-  </div>
+  <header>
+    <?php
+      require_once("includes/header-nav.php");
+      ?>
+  </header>
 
-<!-- <div class="container"> -->
+
+<div class="margen">
+
+      <div class="barraTitulo">
+        <h3>Preguntas Frecuentes</h3>
+      </div>
+
+
+<div class="container caja">
 	<div class="row">
 	    <ul id="accordion" class="col-sm-6 col-md-12">
 
+
   <!-- Question one -->
+
 	      <li>
 	       <div id="choose" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
 	        Necesito estar registrado para realizar una compra?
@@ -43,6 +47,7 @@ require_once("includes/header-nav.php");
 	      </li>
 
 	 <!-- Question two -->
+
 	      <li>
 	       <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 	        Cómo se puede pagar?
@@ -58,6 +63,7 @@ require_once("includes/header-nav.php");
 	      </li>
 
 	  <!-- Question three -->
+
 	      <li>
 	       <div class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 	        Se realizan entregas a domicilio? Y al interior del país?
@@ -72,6 +78,7 @@ require_once("includes/header-nav.php");
 	      </li>
 
 	   <!-- Question Four -->
+
 	        <li>
 	         <div class="collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 	          Cuánto tiempo demora la entrega?
@@ -79,49 +86,84 @@ require_once("includes/header-nav.php");
 	         </div>
 
            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-            <div class="card-body">
-             sciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body">
+                Los plazos de entrega de los pedidos dependen del tipo de productos que incluyan, de tu dirección de entrega y del tipo de entrega que elijas. En periodos de rebajas y otras promociones, la entrega puede alargarse algo más de lo esperado.
+              </div>
             </div>
-           </div>
-	        </li>
+          </li>
 
-	   <!-- Questiion Five -->
-	        <li>
-	         <div class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-	          How can I join the team?
+      <!-- question Five -->
+
+          <li>
+	         <div class="collapseFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+	            Mi producto, ¿Tiene devolución?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
 
            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
             <div class="card-body">
-             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              Para realizar cambios de productos adquiridos, podes acercarte a Servicio de Atención al cliente de cualquiera de nuestras tiendas, presentando la factura de compra o el ticket de cambio correspondiente a la compra, junto al producto con sus etiquetas y embalajes originales.
             </div>
            </div>
-	        </li>
+	       </li>
 
-	   <!-- Question Six-->
-	        <li>
-	         <div class="collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-	          In case I forgot my password, what do I do?
+      <!-- question Six -->
+
+          <li>
+	         <div class="collapseSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+	          ¿Se realizan compras al por mayor?
 	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
 	         </div>
 
-           <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+           <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
             <div class="card-body">
-             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              La cantidad mínima son 4 artículos que pueden ser surtidos entre alimentos balanceados para perros y gatos, arnés, futones, etc.
             </div>
            </div>
 	        </li>
 
-	    </ul>
-	</div>
+      <!-- question Seven -->
+
+          <li>
+	         <div class="collapseSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+	            ¿Qué hago si el producto está agotado?
+	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
+	         </div>
+
+           <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+            <div class="card-body">
+              En este caso puede inscribirse para recibir un correo electrónico. Le enviaremos un correo electrónico inmediatamente cuando el producto vuelva a estar disponible. Si no lo recibimos en el plazo de 30 días, su solicitud caducará y le informaremos de ello.
+              Debido a la popularidad de algunos de nuestros productos, estos tardan poco en agotarse, pero siempre existe otra posibilidad que analizar. Si no está disponible en Internet, puede ser que el producto que busca esté disponible en una tienda Puppy-Shop cercana.
+            </div>
+           </div>
+	        </li>
+
+      <!-- question Eight -->
+
+          <li>
+	         <div class="collapseEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+	            ¿Qué garantía tienen mis productos?
+	          <span class="fa fa-chevron-down fa-1x text-info pull-right"></span>
+	         </div>
+
+           <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+            <div class="card-body">
+             Para Puppy-Shop la calidad es lo primero. Comprobamos exhaustivamente todos nuestros productos para asegurarnos de que están en óptimas Sin embargo, a veces resulta inevitable que se entregue un producto defectuoso.
+             Si un producto que compraste en nuestra tienda online presenta defectos de calidad y quieres devolverlo, deberás hacerlo en nuestra tienda online. En cuanto lo recibamos, nuestro departamento de calidad procederá a inspeccionarlo.
+             Te reembolsaremos el importe del producto tanto si, una vez realizada la comprobación, observamos que presenta defectos.  Puppy-Shop te indemnizará por los gastos que hubiera podido causar su producto defectuoso.
+            </div>
+           </div>
+	       </li>
+
+    </div>
+  </div>
+  
 </div>
-</div>
 
-<footer>
+<?php
+require_once("./includes/footer.php");
+?>
 
-
-</footer>
     <!-- Jquery -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!--bootstrap  -->

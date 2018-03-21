@@ -1,7 +1,4 @@
-
-
 ul, li, ol{
-
   text-decoration: none;
   list-style: none;
   text-align: left;
@@ -17,6 +14,90 @@ body{
 font-family: 'Nunito', sans-serif;
 }
 
+.logo{
+  font-size: 2em;
+}
+
+.nav-item a{
+  font-size: 2em;
+}
+
+.margen{
+  margin-top: 80px;
+  /* background-color: pink; */
+}
+
+.contenedor{
+  padding: 40px;
+  background-color:rgba(237, 246, 240, 0.05);
+}
+
+.barraTitulo{
+  color:rgb(18, 147, 92);
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+  border: solid 1px rgb(18, 147, 92);
+  margin-bottom: 20px;
+}
+
+.titulo{
+  padding-top: 80px;
+  padding-left: 40px;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.card{
+margin: 10px;
+}
+
+.card-title{
+font-family: 'Rammetto One', cursive;
+}
+
+.card-body p{
+  font-size: 1.7em;
+}
+
+.caja{
+  margin: 10px;
+  font-size: 2em;
+  background-color: #FFF;
+}
+
+/* Línea de las preguntas*/
+
+div[data-toggle="collapse"]{
+   border-bottom:1px solid #21aa70;
+   width:90%;
+   padding:30px;
+}
+
+.login{
+  margin-top: 90px;
+  font-size: 2em;
+}
+
+
+.footer {
+  margin-top: 30px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgb(142, 170, 158);
+  color: #FFF;
+}
+
+.final{
+  background-color: rgb(4, 14, 5);
+  font-weight: bold;
+  color: #fff;
+  font-size: 1em;
+}
+
+
+/*  */
+
 
 .product-item:hover {
     box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
@@ -30,20 +111,6 @@ background-color: #588f5a!important;
 .ion-ios-search-strong{
   color: white;
 }
-
-.caja{
-
-  margin: 10px;
-  font-size: 2em;
-  background-color: #FFF;
-
-}
-
-.container{
-margin-top: 10vw;
-padding: 10px;
-}
-
 
 .alling{
 text-align: center;
@@ -66,69 +133,18 @@ color:#2f3d24;
 
 }
 
-.card-body{
-padding: 3vw;
-margin: 2vw 0;
-}
-
-
-.barra{
-  font-size: 2em;
-}
-
-.producto{
-  font-size: 2em;
-}
-/* Preguntas frecuentes */
 
 <<<<<<< HEAD
-.footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: rgba(46, 92, 6, 0.6);
-  color: #fff;
-}
+
 
 .container final {
   background-color: #588f5a;
 }
 
-.img{
-  width: 20%;
-  float: left;
-  margin: auto;
-  }
-=======
-.titulo{
-  color:rgb(18, 147, 92);
-  font-size: 2em;
-  text-align: center;
-  padding: 20px;
-  border: solid 1px rgb(18, 147, 92);
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
 
-.contenedor{
-  padding: 20px;
-}
+=======
 
 h1,h2,h3,h4,h5,.lead,div[data-toggle="collapse"]{
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
-}
-ul li{
-    list-style:one;
-}
-
-/* Línea de las preguntas*/
-div[data-toggle="collapse"]{
-   border-bottom:1px solid #21aa70;
-   width:90%;
-   padding:30px;
-}
-.collapse{
-    width:90%;
-    background-color: rgb(238, 236, 245);
-    font-size: 1.5em;
 }

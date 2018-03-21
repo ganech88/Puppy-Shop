@@ -18,7 +18,7 @@
   </header>
 
 <!-- Carousel -->
-<div class="row">
+<div class="row margen">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
@@ -39,70 +39,77 @@
   </div>
 </div>
 
-<!-- Sucursales -->
-<div class="row d-flex flex-wrap">
+<div class="contenedor">
 
-  <div class="card col-xs-12 col-sm-4 col-md-4 col-lg-6 col-xl-6">
-  <div class="card-body">
-    <h4 class="card-title">Microcentro</h4>
-    <img src="images/sucursal1.jpg" class="img-fluid" alt="">
-    <p class="card-text">
-      <ul>
-          <li>Direccion</li>
-          <li>Telefono</li>
-          <li><a href="#!" class="card-link alling">Como llegar?</a></li>
-      </ul>
-    </p>
+  <div class="barraTitulo">
+      <h3>Nuestros Clientes</h3>
   </div>
+
+  <div class="row d-flex flex-wrap justify-content-center">
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Rolo</h4>
+      <img src="images/perro1.jpg" class="img-fluid" alt="">
+    </div>
+  </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Tristán</h4>
+      <img src="images/gato2.jpg" class="img-fluid" alt="">
+    </div>
+  </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Rómulo</h4>
+      <img src="images/perro2.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Napoleón</h4>
+      <img src="images/gato3.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Hércules</h4>
+      <img src="images/perro3.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Camilo</h4>
+      <img src="images/perro4.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Pinky y Cerebro</h4>
+      <img src="images/gato5.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-5">
+    <div class="card-body">
+      <h4 class="card-title">Simba</h4>
+      <img src="images/perro6.jpg" class="img-fluid" alt="">
+    </div>
+    </div>
+
+  </div>
+
 </div>
 
-  <div class="card col-xs-12 col-sm-4 col-md-4 col-lg-6 col-xl-6">
-  <div class="card-body">
-    <h4 class="card-title">Belgrano</h4>
-    <img src="images/sucursal5.jpg" class="img-fluid" alt="">
-    <p class="card-text">
-      <ul>
-        <li>Direccion</li>
-        <li>Telefono</li>
-        <li><a href="#!" class="card-link">Como llegar?</a></li>
-      </ul>
-    </p>
-  </div>
-</div>
-
-  <div class="card col-xs-12 col-sm-4 col-md-4 col-lg-6 col-xl-6">
-  <div class="card-body">
-    <h4 class="card-title">Recoleta</h4>
-    <img src="images/sucursal3.jpg" class="img-fluid" alt="">
-    <p class="card-text">
-      <ul>
-        <li>Direccion</li>
-        <li>Telefono</li>
-        <li><a href="#!" class="card-link">Como llegar?</a></li>
-      </ul>
-    </p>
-  </div>
-  </div>
-
-  <div class="card col-xs-12 col-sm-4 col-md-4 col-lg-6 col-xl-6">
-  <div class="card-body">
-    <h4 class="card-title">Palermo</h4>
-    <img src="images/sucursal4.jpg" class="img-fluid" alt="">
-    <p class="card-text">
-      <ul>
-        <li>Direccion</li>
-        <li>Telefono</li>
-        <li><a href="#!" class="card-link">Como llegar?</a></li>
-      </ul>
-    </p>
-  </div>
-  </div>
-
-</div>
 <?php
 require_once("./includes/footer.php");
 ?>
-
 
     <!-- Jquery -->
     <script src="js/jquery-3.3.1.min.js"></script>
