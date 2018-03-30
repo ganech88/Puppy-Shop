@@ -1,3 +1,56 @@
+<?php
+requiere_once("funciones.php");
+
+if(usuarioLogueado()){
+
+header("location:perfilUsuario.php");
+exit;
+}
+// Inicializacion de variables de la registracion
+$nombre = "";
+$apellido = "";
+$number = "";
+$direccion = "";
+$email = "";
+$Nombre_de_Usuario = "";
+$contraseña = "";
+// Inicializacion de variables de el logueo.
+$username = "";
+$password = "";
+
+// Persistimos la informacion del usuario en la registracion
+
+	$nombre = trim($_POST["nombre"]);
+  $apellido = trim($_POST["apellido"]);
+  $number = trim($_POST["number"]);
+  $direccion = trim($_POST["direccion"]);
+  $email = trim($_POST["email"]);
+
+// Persistimos la informacion del usuarion en el Logueo
+$username = trim($_POST["username"]);
+
+// Validacion de los errores y logueo final del usuario.
+
+// Valido y guardo en errores
+$errores = validar($_POST, 'foto');
+
+if (empty ($errores)){
+
+  $errores = guardaImagen("foto");
+
+}
+
+if (empty ($errores)) {
+  $usuario = guardaUsuario($_POST, "foto");
+  logueo($usuario);
+}
+
+
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -69,45 +122,104 @@
 
                   <div class="form-group">
                       <label for="nombre"><strong>Nombre:</strong></label>
-                      <input class="form-control" type="text" name="nombre" id="nombre">
+                      <input class="form-control" type="text" name="nombre" id="nombre" value="<?=$nombre?>">
+                      <?php if (isset($errores["nombre"])): ?>
+        								<span style="color: rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["nombre"];?>
+                        </span>
+                      <?php endif; ?>
                   </div>
                     <br>
                   <div class="form-group">
                     <label for="apellido"><strong>Apellido:</strong></label>
-                    <input class="form-control" type="text" name="apellido" id="apellido">
+                    <input class="form-control" type="text" name="apellido" id="apellido"value="<?=$apellido?>">
+                    <?php if (isset($errores["apellido"])): ?>
+                      <span style="color: rgb(18,147,92);">
+                        <b class="ion-alert-circled"></b>
+                        <?=$errores["apellido"];?>
+                      </span>
+                    <?php endif; ?>
                   </div>
                     <br>
                   <div class="form-group">
                     <label for='password'><strong>Teléfono de Contacto:</strong></label>
-                    <input class="form-control" type="text" name='number' id='number'>
+                    <input class="form-control" type="text" name='number' id='number'value="<?=$number?>">
+                    <?php if (isset($errores["number"])): ?>
+                      <span style="color: rgb(18,147,92);">
+                        <b class="ion-alert-circled"></b>
+                        <?=$errores["number"];?>
+                      </span>
+                    <?php endif; ?>
                   </div>
                     <br>
                   <div class="form-group">
                     <label for='username'><strong>Domicilio:</strong></label>
-                    <input class="form-control" type='text' name='direccion' id='direccion'>
+                    <input class="form-control" type='text' name='direccion' id='direccion'value="<?=$direccion?>">
+                    <?php if (isset($errores["direccion"])): ?>
+                      <span style="color: rgb(18,147,92);">
+                        <b class="ion-alert-circled"></b>
+                        <?=$errores["direccion"];?>
+                      </span>
+                    <?php endif; ?>
                   </div>
                     <br>
                   <div class="form-group">
                       <label for="email"><strong>E-mail:</strong></label>
-                      <input class="form-control" type="email" name="email" id="email">
+                      <input class="form-control" type="email" name="email" id="email"value="<?=$email?>">
+                      <?php if (isset($errores["email"])): ?>
+        								<span style="color: rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["email"];?>
+                        </span>
+                      <?php endif; ?>
                   </div>
                   <div class="form-group">
                       <label for="Nombre_de_Usuario"><strong>Nombre de Usuario:</strong></label>
-                      <input class="form-control" type="text" name="Nombre_de_Usuario" id="Nombre_de_Usuario">
+                      <input class="form-control" type="text" name="Nombre_de_Usuario" id="Nombre_de_Usuario"value="<?=$Nombre_de_Usuario?>">
+                      <?php if (isset($errores["Nombre_De_usuario"])): ?>
+        								<span style="color: rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["Nombre_De_Usuario"];?>
+                        </span>
+                      <?php endif; ?>
                   </div>
                   <div class="form-group">
                       <label for="contraseña"><strong>Contraseña:</strong></label>
                       <input class="form-control" type="password" name="contraseña" id="contraseña">
+                      <?php if (isset($errores["contraseña"])): ?>
+        								<span style="color: rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["contraseña"];?>
+                        </span>
+                      <?php endif; ?>
                   </div>
 
                   <div class="form-group">
                       <label for="contraseña"><strong>Confirmar Contraseña:</strong></label>
                       <input class="form-control" type="password" name="contraseña" id="contraseña">
+                      <?php if (isset($errores["contraseña"])): ?>
+        								<span style="color:rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["contraseña"];?>
+                        </span>
+                      <?php endif; ?>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="contraseña"><strong>Elegi tu foto de perfil</strong></label>
+                      <input class="form-control" type="file" name="foto" id="foto">
+                      <?php if (isset($errores["foto"])): ?>
+        								<span style="color:rgb(18,147,92);">
+                          <b class="ion-alert-circled"></b>
+                          <?=$errores["foto"];?>
+                        </span>
+                      <?php endif; ?>
                   </div>
 
                     <br>
                   <div class="form-group">
-                    <button class="btn btn-success" type="submit"><strong>Registrarme</strong></button>
+                    <button class="btn btn-success" type="submit"><strong>Registrame</strong></button>
                   </div>
                     <!-- </fieldset> -->
                     </form>

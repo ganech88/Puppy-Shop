@@ -6,5 +6,5 @@ El proyecto consta de la creacion de un E-Commerce para gestion de usuarios, pro
 
 Los integrantes son:
 Gabriel Tolmasky
-Andrea Vanesa 
+Vanesa Lopez 
 Sari Chiba
