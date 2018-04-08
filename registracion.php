@@ -1,10 +1,12 @@
 <?php
-requiere_once("funciones.php");
+require_once("funciones.php");
 
-if(usuarioLogueado()){
+if(estaLogueado()){
 
-header("location:perfilUsuario.php");
+header("location:perfilDeUsuario.php");
 exit;
+
+
 }
 // Inicializacion de variables de la registracion
 $nombre = "";
@@ -36,12 +38,12 @@ $errores = validar($_POST, 'foto');
 
 if (empty ($errores)){
 
-  $errores = guardaImagen("foto");
+  $errores = guardarImagen("foto");
 
 }
 
 if (empty ($errores)) {
-  $usuario = guardaUsuario($_POST, "foto");
+  $usuario = guardarUsuario($_POST, "foto");
   logueo($usuario);
 }
 
@@ -91,10 +93,22 @@ if (empty ($errores)) {
 							<div class="col-lg-12">
 								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
+										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="<?=$email?>">
+										<?php if (isset($errores['email'])): ?>
+											<span style="color: red;">
+												<b class="ion-alert-circled>"</b>
+												<?=$errores['email'];?>
+											</span>
+										<?php endif; ?>
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña" value=""<?=$password?>"">
+										<?php if (isset($errores["password"])): ?>
+											<span style="color: red;">
+												<b class="ion-alert-circled"></b>
+												<?=$errores["password"];?>
+											</span>
+										<?php endif; ?>
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -122,7 +136,7 @@ if (empty ($errores)) {
 
                   <div class="form-group">
                       <label for="nombre"><strong>Nombre:</strong></label>
-                      <input class="form-control" type="text" name="nombre" id="nombre" value="<?=$nombre?>">
+                      <input class="form-control" type="text" name="nombre" value="<?=$nombre?>">
                       <?php if (isset($errores["nombre"])): ?>
         								<span style="color: rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
@@ -133,7 +147,7 @@ if (empty ($errores)) {
                     <br>
                   <div class="form-group">
                     <label for="apellido"><strong>Apellido:</strong></label>
-                    <input class="form-control" type="text" name="apellido" id="apellido"value="<?=$apellido?>">
+                    <input class="form-control" type="text" name="apellido" value="<?=$apellido?>">
                     <?php if (isset($errores["apellido"])): ?>
                       <span style="color: rgb(18,147,92);">
                         <b class="ion-alert-circled"></b>
@@ -144,7 +158,7 @@ if (empty ($errores)) {
                     <br>
                   <div class="form-group">
                     <label for='password'><strong>Teléfono de Contacto:</strong></label>
-                    <input class="form-control" type="text" name='number' id='number'value="<?=$number?>">
+                    <input class="form-control" type="text" name='number' value="<?=$number?>">
                     <?php if (isset($errores["number"])): ?>
                       <span style="color: rgb(18,147,92);">
                         <b class="ion-alert-circled"></b>
@@ -155,7 +169,7 @@ if (empty ($errores)) {
                     <br>
                   <div class="form-group">
                     <label for='username'><strong>Domicilio:</strong></label>
-                    <input class="form-control" type='text' name='direccion' id='direccion'value="<?=$direccion?>">
+                    <input class="form-control" type='text' name='direccion'value="<?=$direccion?>">
                     <?php if (isset($errores["direccion"])): ?>
                       <span style="color: rgb(18,147,92);">
                         <b class="ion-alert-circled"></b>
@@ -166,7 +180,7 @@ if (empty ($errores)) {
                     <br>
                   <div class="form-group">
                       <label for="email"><strong>E-mail:</strong></label>
-                      <input class="form-control" type="email" name="email" id="email"value="<?=$email?>">
+                      <input class="form-control" type="email" name="email" value="<?=$email?>">
                       <?php if (isset($errores["email"])): ?>
         								<span style="color: rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
@@ -176,7 +190,7 @@ if (empty ($errores)) {
                   </div>
                   <div class="form-group">
                       <label for="Nombre_de_Usuario"><strong>Nombre de Usuario:</strong></label>
-                      <input class="form-control" type="text" name="Nombre_de_Usuario" id="Nombre_de_Usuario"value="<?=$Nombre_de_Usuario?>">
+                      <input class="form-control" type="text" name="username" value="<?=$Nombre_de_Usuario?>">
                       <?php if (isset($errores["Nombre_De_usuario"])): ?>
         								<span style="color: rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
@@ -186,7 +200,7 @@ if (empty ($errores)) {
                   </div>
                   <div class="form-group">
                       <label for="contraseña"><strong>Contraseña:</strong></label>
-                      <input class="form-control" type="password" name="contraseña" id="contraseña">
+                      <input class="form-control" type="password" name="">
                       <?php if (isset($errores["contraseña"])): ?>
         								<span style="color: rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
@@ -197,7 +211,7 @@ if (empty ($errores)) {
 
                   <div class="form-group">
                       <label for="contraseña"><strong>Confirmar Contraseña:</strong></label>
-                      <input class="form-control" type="password" name="contraseña" id="contraseña">
+                      <input class="form-control" type="password" name="rcontraseña">
                       <?php if (isset($errores["contraseña"])): ?>
         								<span style="color:rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
@@ -208,7 +222,7 @@ if (empty ($errores)) {
 
                   <div class="form-group">
                       <label for="contraseña"><strong>Elegi tu foto de perfil</strong></label>
-                      <input class="form-control" type="file" name="foto" id="foto">
+                      <input class="form-control" type="file" name="foto">
                       <?php if (isset($errores["foto"])): ?>
         								<span style="color:rgb(18,147,92);">
                           <b class="ion-alert-circled"></b>
