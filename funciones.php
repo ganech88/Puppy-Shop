@@ -13,12 +13,12 @@ function crearUsuario($data, $imagen) {
 		"id" => traerUltimoID(),
 		"nombre" => $data["nombre"],
     "apellido" => $data["apellido"],
-    "number" => $date["number"],
-    "direccion" => $date["direccion"],
+    "number" => $data["number"],
+    "direccion" => $data["direccion"],
 		"email" => $data["email"],
     "username" => $data["username"],
 		"password" => password_hash($data["password"], PASSWORD_DEFAULT),
-		"foto" => 'img/' . $data["email"] . '.' . pathinfo($_FILES[$imagen]["name"], PATHINFO_EXTENSION)
+		"foto" => 'foto-perfil/' . $data["email"] . '.' . pathinfo($_FILES[$imagen]["name"], PATHINFO_EXTENSION)
 		];
 
   return $usuario;
@@ -33,10 +33,10 @@ function validar($data, $archivo) {
     $direccion = trim($_POST["direccion"]);
 		$email = trim($_POST["email"]);
     $username = trim($_POST["username"]);
-		$password = trim($_POST["contraseña"]);
-		$rcontra = trim($_POST["rcrontraseña"]);
+		$password = trim($_POST["password"]);
+		$rcontra = trim($_POST["rpassword"]);
 
-    if ($name == '') { // Si el nombre está vacio
+    if ($nombre == '') { // Si el nombre está vacio
       $errores["nombre"] = "Completa tu nombre";
     }
 
@@ -65,32 +65,33 @@ function validar($data, $archivo) {
       $errores["password"] = "Por favor completa tu password";
     } elseif ($password != $rcontra) {
       $errores["password"] = "Tus contraseñas no coinciden";
-    }
+    } elseif(strlen($password)<7){
+     $errores["password"] = "Ingresa una contraseña con un minimo de 7 caracteres.";
+   }
 
     if ($_FILES[$archivo]["error"] != UPLOAD_ERR_OK) { // Si no subieron ninguna imagen
       $errores["foto"] = "Por favor carga una foto";
     }
 
-// Lo comento por que no se por que no me compila
-    // if(strlen($password)<7){
-      // $errores["password"] = "Ingresa una contraseña con un minimo de 7 caracteres."
-    // }
+
 
     return $errores;
   }
 
 function traerTodos(){
 
-$todosJSON = file_get_contents("usuarios.json");
+$todosJSON = file_get_contents("baseUsuarios.json");
 
 $usuariosArray = explode(PHP_EOL, $todosJSON);
 
 array_pop($usuariosArray);
 
+$todosPHP = [];
+
 foreach ($usuariosArray as $usuarios) {
 
-  $todosPHP[] = json_decode($usuarios, true);
-  # code...
+$todosPHP[] = json_decode($usuarios, true);
+
 }
 return $todosPHP;
 
@@ -105,22 +106,20 @@ function traerUltimoID(){
   if (count($usuarios) == 0) {
     return 1;
 }
-    $Ultimo = array_pop($usuarios);
+    $ultimo = array_pop($usuarios);
     $id = $ultimo["id"];
     return $id +1;
 
 
 }
 
-function existeEmail(){
-
+function existeEmail($email){
   $usuarios = traerTodos();
   foreach ($usuarios as $unUsuario) {
 
     if($unUsuario["email"] == $email){
       return $unUsuario;
     }
-
 
   }
     return false;
@@ -140,10 +139,10 @@ function guardarImagen($laImagen) {
       $rutaFinal = $direFisica . "/foto-perfil/" . $_POST['email'] . '.' . $extension;
       move_uploaded_file($archivoFisico, $rutaFinal);
     } else {
-    $errores["foto"] = "el formato no es correcto";
+    $errores["imagen"] = "el formato no es correcto";
           }
    }else {
-$errores["foto"] = "No se subio el archivo";
+$errores["imagen"] = "No se subio el archivo";
 
   }
 
@@ -157,8 +156,8 @@ function guardarUsuario($data, $archivo){
 
   $usuarioJSON = json_encode($usuario);
 
-  file_put_contents('usuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
-
+  file_put_contents('baseUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
+  var_dump($usuarioJSON);exit;
   return $usuario;
 }
 
@@ -174,7 +173,7 @@ function validarLogin($data) {
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $arrayADevolver['email'] = 'Poné un formato de email válido';
   } elseif (!existeEmail($email)) {
-    $arrayADevolver['password'] = 'Este email no está registrado';
+    $arrayADevolver['email'] = 'Este email no está registrado';
   } else {
 
     $usuario = existeEmail($email);
@@ -188,7 +187,7 @@ function validarLogin($data) {
 }
 
 
-function loguear($usuario) {
+function logueo($usuario) {
   // Guardo en $_SESSION el ID del USUARIO
    $_SESSION['id'] = $usuario['id'];
   header('location: perfilDeUsuario.php');
@@ -198,5 +197,20 @@ function loguear($usuario) {
 function estaLogueado() {
   return isset($_SESSION['id']);
 }
+
+function traerId($id){
+  // me traigo todos los usuarios
+  $usuarios = traerTodos();
+
+  // Recorro el array de todos los usuarios
+  foreach ($usuarios as $usuario) {
+    if ($id == $usuario['id']) {
+      return $usuario;
+    }
+  }
+
+  return false;
+}
+
 
  ?>
