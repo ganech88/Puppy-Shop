@@ -157,7 +157,7 @@ function guardarUsuario($data, $archivo){
   $usuarioJSON = json_encode($usuario);
 
   file_put_contents('baseUsuarios.json', $usuarioJSON . PHP_EOL, FILE_APPEND);
-  var_dump($usuarioJSON);exit;
+
   return $usuario;
 }
 

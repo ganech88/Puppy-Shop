@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
       <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
       <link rel="stylesheet" href="css/styles.css">
     <title>Catalogo</title>
   </head>

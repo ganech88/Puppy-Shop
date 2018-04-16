@@ -1,8 +1,15 @@
+
+
 ul, li, ol{
   text-decoration: none;
   list-style: none;
   text-align: left;
 }
+
+
+
+
+
 
 body{
   background-color: ##ffffff;
@@ -36,11 +43,11 @@ background-color: transparent;
 }
 
 .barraTitulo{
-  color:rgb(18, 147, 92);
-  font-size: 2em;
+  font-family: 'Gaegu', cursive;
+  font-size: 3em;
+  color: #172017;
   text-align: center;
   padding: 20px;
-  border: solid 1px rgb(18, 147, 92);
   margin-bottom: 20px;
 }
 
@@ -55,8 +62,8 @@ background-color: transparent;
 margin: 10px;
 }
 
-.card-title{
-font-family: 'Rammetto One', cursive;
+h4.card-title{
+font-family: 'Do Hyeon', sans-serif;
 }
 
 div.card-body ul li{
@@ -160,5 +167,11 @@ h1,h2,h3,h4,h5,.lead,div[data-toggle="collapse"]{
     font-size: 2em;
 }
 
+
+}
+
+.texto-bienvenida{
+font-size: 2em;
+color: #172017;
 
 }

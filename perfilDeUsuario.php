@@ -27,9 +27,9 @@
 	  </header>
 		<div class="margen">
 
-		      <div class="barraTitulo">
+		      <div class="barraTitulo texto-bienvenida">
 		<div class="container">
-			<h1>Hola <?=$usuario['nombre']?></h1>
+			<h1>Bienvenido <?=$usuario['nombre']?> a PuppyShop</h1>
 			<img class="img-rounded" src="<?=$usuario['foto']?>" width="200">
 			<br><br>
 			<a class="btn btn-warning" href="logout.php">Cerrar sesion </a>
