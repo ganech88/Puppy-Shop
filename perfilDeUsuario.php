@@ -16,6 +16,8 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 			<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css">
 		<title>Perfil del usuario</title>
 	</head>
@@ -34,7 +36,7 @@
 			<br><br>
 			<a class="btn btn-warning" href="logout.php">Cerrar sesion </a>
 		</div>
-
+</div>
 <?php
 require_once("./includes/footer.php");
 ?>

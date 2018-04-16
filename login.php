@@ -22,7 +22,7 @@
 			logueo($usuario);
 
 			// Seteo la cookie
-			if (isset($_POST["recordar"])) {
+			if (isset($_POST["remember"])) {
 	        setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
 	      }
 
@@ -45,6 +45,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
       <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
       <link rel="stylesheet" href="css/styles.css">
     <title>Registración</title>
   </head>
@@ -80,7 +82,7 @@
 										<input type="text" name="email"tabindex="1" class="form-control" placeholder="Email" value="<?=$email?>">
 										<?php if (isset($errores['email'])): ?>
 											<span style="color: red;">
-												<b class="ion-alert-circled>"</b>
+										 	<b class="ion-alert-circled"></b>
 												<?=$errores['email'];?>
 											</span>
 										<?php endif; ?>
@@ -95,7 +97,7 @@
 										<?php endif; ?>
 									</div>
 									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+										<input type="checkbox" tabindex="3" class="" name="remember">
 										<label for="remember"> Recordame </label>
 									</div>
 									<div class="form-group">

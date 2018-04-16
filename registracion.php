@@ -13,12 +13,9 @@ $apellido = '';
 $number = '';
 $direccion = "";
 $email = "";
-$username = "";
 $password = "";
-$rcontraseña = "";
-// Inicializacion de variables de el logueo.
-$user = "";
-$pass = "";
+$rpassword= "";
+
 // Inicializacion de array de errores
 $errores = [];
 
@@ -143,16 +140,6 @@ if (empty ($errores)) {
                       <?php endif; ?>
                   </div>
                   <div class="form-group">
-                      <label for="Nombre_de_Usuario"><strong>Nombre de Usuario:</strong></label>
-                      <input class="form-control" type="text" name="username" value="<?=$username?>">
-                      <?php if (isset($errores["username"])): ?>
-        								<span style="color: #dd2222;">
-                          <b class="ion-alert-circled"></b>
-                          <?=$errores["Nombre_De_Usuario"];?>
-                        </span>
-                      <?php endif; ?>
-                  </div>
-                  <div class="form-group">
                       <label for="contraseña"><strong>Contraseña:</strong></label>
                       <input class="form-control" type="password" name="password">
                       <?php if (isset($errores["password"])): ?>
@@ -166,12 +153,6 @@ if (empty ($errores)) {
                   <div class="form-group">
                       <label for="contraseña"><strong>Confirmar Contraseña:</strong></label>
                       <input class="form-control" type="password" name="rpassword">
-                      <?php if (isset($errores["contraseña"])): ?>
-        								<span style="color:#dd2222;">
-                          <b class="ion-alert-circled"></b>
-                          <?=$errores["password"];?>
-                        </span>
-                      <?php endif; ?>
                   </div>
 
                   <div class="form-group">
