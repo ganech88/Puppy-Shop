@@ -1,3 +1,7 @@
+<?php
+  require_once('soporte.php');
+ ?>
+
 <nav class="navbar navbar-expand-lg  navbar-dark fixed-top bg-green d-flex">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +27,6 @@
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
             <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="login.php">Registrate / Iniciar Sesion <span class="sr-only">(current)</span></a>
-
           </li>
         </ul>
 

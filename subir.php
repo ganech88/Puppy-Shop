@@ -13,7 +13,7 @@
       $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
       $miArchivo = dirname(__FILE__);
-      $miArchivo = $miArchivo . "/images/" . $nombre . $exit;
+      $miArchivo = $miArchivo . "/foto-perfil/" . $nombre . $exit;
 
       move_uploaded_file($archivo, $miArchivo);
 

@@ -1,7 +1,7 @@
 <?php
-	require_once('funciones.php');
+	require_once('soporte.php');
 
-	if (estaLogueado()) {
+	if ($auth->estaLogueado()) {
 		header('location: perfilDeUsuario.php');
 		exit;
 	}
@@ -14,27 +14,23 @@
 	if ($_POST) {
 		$email = trim($_POST['email']);
 
-		$errores = validarLogin($_POST);
+		$errores = $validator->validarLogin($db);
 
 		if (empty($errores)) {
-			$usuario = existeEmail($email);
+			$usuario = $db->existeEmail($email);
 
-			logueo($usuario);
+			$auth->logueo($usuario);
 
 			// Seteo la cookie
 			if (isset($_POST["remember"])) {
-	        setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
+	        setcookie('id', $usuario->getId(), time() + 3600 * 24 * 30);
 	      }
 
-			header('location: perfil.php');
+			header('location: perfilDeUsuario.php');
 			exit;
 		}
 	}
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>

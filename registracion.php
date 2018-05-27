@@ -1,11 +1,10 @@
 <?php
-require_once("funciones.php");
+require_once("soporte.php");
 
-if(estaLogueado()){
+if($auth->estaLogueado()){
 
-header("location:perfilDeUsuario.php");
-exit;
-
+ header("location:perfilDeUsuario.php");
+ exit;
 }
 // Inicializacion de variables de la registracion
 $nombre = '';
@@ -29,19 +28,30 @@ if ($_POST) {
   $direccion = trim($_POST["direccion"]);
   $email = trim($_POST["email"]);
 
+  $errores = $validator->validar($db, 'foto');
 
-$errores = validar($_POST, 'foto');
+  if (empty ($errores)){
+   $errores = $db->guardarImagen("foto");
+  }
 
-if (empty ($errores)){
+  if (empty ($errores)) {
+	 $extension = pathinfo($_FILES['foto']['nombre'], PATHINFO_EXTENSION);
+	 $foto = 'foto-perfil/' . $email . '.' . $extension;
 
-  $errores = guardarImagen("foto");
+	 $usuario = new User($_POST["nombre"],
+	  									 $_POST["apellido"],
+											 $_POST["number"],
+											 $_POST["direccion"],
+											 $_POST["email"],
+											 $_POST["password"],
+											 $foto);
 
-}
+	 $usuarioGuardado = $db->guardarUsuario($usuario, $db);
 
-if (empty ($errores)) {
-  $usuario = guardarUsuario($_POST, "foto");
-  logueo($usuario);
-}
+	 header('location: login.php');
+ 	 exit;
+  }
+
 }
 
  ?>

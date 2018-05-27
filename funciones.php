@@ -1,12 +1,12 @@
 <?php
 
-session_start();
-
-// Chequeo previo de cookie en el cliente, para ver si se loguea el usuario.
-if (isset($_COOKIE['id'])) {
-  $_SESSION['id'] = $_COOKIE['id'];
-
-}
+// session_start();
+//
+// // Chequeo previo de cookie en el cliente, para ver si se loguea el usuario.
+// if (isset($_COOKIE['id'])) {
+//   $_SESSION['id'] = $_COOKIE['id'];
+//
+// }
 // Genero la funcion que crea el usuario.
 // function crearUsuario($data, $imagen) {
 // 	$usuario = [
@@ -163,28 +163,28 @@ if (isset($_COOKIE['id'])) {
 
 
 
-function validarLogin($data) {
-  $arrayADevolver = [];
-  $email = trim($data['email']);
-  $password = trim($data['password']);
-
-  if ($email == '') {
-    $arrayADevolver['email'] = 'Completá tu email';
-  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $arrayADevolver['email'] = 'Poné un formato de email válido';
-  } elseif (!existeEmail($email)) {
-    $arrayADevolver['email'] = 'Este email no está registrado';
-  } else {
-
-    $usuario = existeEmail($email);
-
-      if (!password_verify($password, $usuario["password"])) {
-        $arrayADevolver['password'] = "Credenciales incorrectas";
-      }
-  }
-
-  return $arrayADevolver;
-}
+// function validarLogin($data) {
+//   $arrayADevolver = [];
+//   $email = trim($data['email']);
+//   $password = trim($data['password']);
+//
+//   if ($email == '') {
+//     $arrayADevolver['email'] = 'Completá tu email';
+//   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//     $arrayADevolver['email'] = 'Poné un formato de email válido';
+//   } elseif (!existeEmail($email)) {
+//     $arrayADevolver['email'] = 'Este email no está registrado';
+//   } else {
+//
+//     $usuario = existeEmail($email);
+//
+//       if (!password_verify($password, $usuario["password"])) {
+//         $arrayADevolver['password'] = "Credenciales incorrectas";
+//       }
+//   }
+//
+//   return $arrayADevolver;
+// }
 
 
 // function logueo($usuario) {

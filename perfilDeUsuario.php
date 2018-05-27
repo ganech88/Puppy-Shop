@@ -1,13 +1,14 @@
 <?php
-	require_once('funciones.php');
+	require_once('soporte.php');
 
-	if (!estaLogueado()) {
-		header('location: registracion.php');
+	if (!$auth->estaLogueado()) {
+		header('location: login.php');
 		exit;
 	}
 
-	$usuario = traerId($_SESSION['id']);
+	$usuario = $db->traerId($_SESSION['id']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
@@ -31,8 +32,8 @@
 
 		      <div class="barraTitulo texto-bienvenida">
 		<div class="container">
-			<h1>Bienvenido <?=$usuario['nombre']?> a PuppyShop</h1>
-			<img class="img-rounded" src="<?=$usuario['foto']?>" width="200">
+			<h1>Bienvenido <?=$usuario->getName()?> a PuppyShop</h1>
+			<img class="img-rounded" src="<?=$usuario->getFoto()?>" width="200">
 			<br><br>
 			<a class="btn btn-warning" href="logout.php">Cerrar sesion </a>
 		</div>

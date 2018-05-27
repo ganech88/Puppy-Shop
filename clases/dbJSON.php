@@ -11,7 +11,7 @@ class dbJSON extends DB {
     $this->archivo = "baseUsuario.json";
   }
 
-  public function existeMail($mail){
+  public function existeEmail($mail){
 
     $usuarios = $this->traerTodos();
 
@@ -78,7 +78,7 @@ class dbJSON extends DB {
     return $id + 1;
   }
 
-  public function guargarImagen($laImagen){
+  public function guardarImagen($laImagen){
 
     $errores = [];
 
@@ -89,7 +89,7 @@ class dbJSON extends DB {
 
       if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg') {
         $direFisica = dirname(__FILE__);
-        $rutaFinal = $direFisica . '/foto-perfil/' . $_POST['email'] . '.' . $extension;
+        $rutaFinal = $direFisica . '/../foto-perfil/' . $_POST['email'] . '.' . $extension;
         move_uploaded_file($archivoFisico, $rutaFinal);
       } else {
         $errores['imagen'] = 'el formato no es correcto';

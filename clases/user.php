@@ -1,6 +1,6 @@
 <?php
 
-	class Usuario {
+	class User {
 		private $id;
 		private $nombre;
     private $apellido;
@@ -90,6 +90,6 @@
 			return $this->foto;
 		}
 
+}
 
-
- ?>
+?>		
