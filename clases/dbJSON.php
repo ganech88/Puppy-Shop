@@ -11,7 +11,7 @@ class dbJSON extends DB {
     $this->archivo = "baseUsuario.json";
   }
 
-  public function existeEmail($mail){
+  public function existeEmail($email){
 
     $usuarios = $this->traerTodos();
 

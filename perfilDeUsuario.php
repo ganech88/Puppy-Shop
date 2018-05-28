@@ -2,7 +2,7 @@
 	require_once('soporte.php');
 
 	if (!$auth->estaLogueado()) {
-		header('location: login.php');
+		header('location:login.php');
 		exit;
 	}
 
@@ -32,7 +32,7 @@
 
 		      <div class="barraTitulo texto-bienvenida">
 		<div class="container">
-			<h1>Bienvenido <?=$usuario->getName()?> a PuppyShop</h1>
+			<h1>Bienvenido <?=$usuario->getNombre()?> a PuppyShop</h1>
 			<img class="img-rounded" src="<?=$usuario->getFoto()?>" width="200">
 			<br><br>
 			<a class="btn btn-warning" href="logout.php">Cerrar sesion </a>

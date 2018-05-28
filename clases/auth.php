@@ -7,14 +7,14 @@ class Auth{
     session_start();
 
     if (isset($_COOKIE['id']) && !$this->estaLogueado()) { //Si hay COOKIE y no esta loguado
-        $this->logueo($_COOKIE);
+        $this->logueo($_COOKIE['id']);
     }
   }
 
 
-  public function logueo($usuario){
+  public function logueo($usuarioId){
 
-   $_SESSION['id'] = $usuario['id'];
+   $_SESSION['id'] = $usuarioId;
    header('location: perfilDeUsuario.php');
    exit;
   }

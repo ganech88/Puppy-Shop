@@ -19,15 +19,15 @@
 		if (empty($errores)) {
 			$usuario = $db->existeEmail($email);
 
-			$auth->logueo($usuario);
-
 			// Seteo la cookie
 			if (isset($_POST["remember"])) {
 	        setcookie('id', $usuario->getId(), time() + 3600 * 24 * 30);
 	      }
 
-			header('location: perfilDeUsuario.php');
-			exit;
+			$auth->logueo($usuario->getId());
+
+			// header('location: perfilDeUsuario.php');
+			// exit;
 		}
 	}
 ?>

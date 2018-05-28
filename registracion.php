@@ -35,7 +35,7 @@ if ($_POST) {
   }
 
   if (empty ($errores)) {
-	 $extension = pathinfo($_FILES['foto']['nombre'], PATHINFO_EXTENSION);
+	 $extension = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
 	 $foto = 'foto-perfil/' . $email . '.' . $extension;
 
 	 $usuario = new User($_POST["nombre"],
@@ -48,8 +48,8 @@ if ($_POST) {
 
 	 $usuarioGuardado = $db->guardarUsuario($usuario, $db);
 
-	 header('location: login.php');
- 	 exit;
+	 $auth->logueo($usuarioGuardado['id']);
+
   }
 
 }
