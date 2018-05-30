@@ -1,4 +1,6 @@
 <?php
+  header('location:migracion.php');
+
 	require_once('soporte.php');
 
 	if ($auth->estaLogueado()) {

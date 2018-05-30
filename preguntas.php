@@ -1,3 +1,7 @@
+<?php
+	header('location:migracion.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>

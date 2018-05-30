@@ -1,3 +1,10 @@
+<?php
+	require_once('soporte.php');
+	if (!$db->conexion()) {
+		header("location: migracion.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +47,8 @@
     </a>
   </div>
 </div>
+
+<?php var_dump($db->traerTodos());?>
 
 <div class="contenedor">
 
