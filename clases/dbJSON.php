@@ -33,7 +33,7 @@ class dbJSON extends DB {
     array_pop($usuariosArray);
 
     $todosPHP = [];
-    // Recorremos el array y generamos por cada usuario un array del usuario
+
     foreach ($usuariosArray as $usuario) {
       $usuarioJSON = json_decode($usuario, true);
       $usuario = new User($usuarioJSON["nombre"],
@@ -49,7 +49,7 @@ class dbJSON extends DB {
       $todosPHP[] = $usuario;
     }
 
-   return $todosPHP;
+   return $todosPHP;  //Devuelve un array de objetos (usuario)
   }
 
   public function guardarUsuario(User $usuario, DB $db){
@@ -60,7 +60,7 @@ class dbJSON extends DB {
 
     file_put_contents($this->archivo, $usuarioJSON . PHP_EOL, FILE_APPEND);
 
-    return $usuarioCreado;
+    return $usuarioCreado; //Devuelve al usuario creado de tipo array
   }
 
   public function traerUltimoID(){

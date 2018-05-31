@@ -6,7 +6,7 @@
 		exit;
 	}
 
-	$usuario = $db->traerId($_SESSION['id']);
+	$usuario = $db->traerId($_SESSION['id']); //trae al usuario que se logueo como array
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,10 @@
 <?php
 	require_once('soporte.php');
+
 	if (!$db->conexion()) {
 		header("location: migracion.php");
 	}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +50,9 @@
   </div>
 </div>
 
-<?php var_dump($db->traerTodos());?>
+<!-- <?php var_dump($db->existeEmail('bullock@gmail.com'));?>
+<?php var_dump($db->traerUltimoID());?> -->
+
 
 <div class="contenedor">
 

@@ -37,7 +37,6 @@
 				'password' => $this->setPassword($this->password),
 				'foto' => $this->foto
 			];
-
 		}
 
 		public function setnombre($nombre) {
@@ -92,4 +91,4 @@
 
 }
 
-?>		
+?>

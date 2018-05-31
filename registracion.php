@@ -1,7 +1,9 @@
 <?php
-header('location:migracion.php');
-
 require_once("soporte.php");
+
+if (!$db->conexion()) {
+  header("location: migracion.php");
+}
 
 if($auth->estaLogueado()){
 
@@ -38,7 +40,7 @@ if ($_POST) {
 
   if (empty ($errores)) {
 	 $extension = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
-	 $foto = 'foto-perfil/' . $email . '.' . $extension;
+	 $foto = 'foto-perfil/' . $email . '.' . $extension; //guardo el directorio en la variable $foto
 
 	 $usuario = new User($_POST["nombre"],
 	  									 $_POST["apellido"],
@@ -48,7 +50,10 @@ if ($_POST) {
 											 $_POST["password"],
 											 $foto);
 
-	 $usuarioGuardado = $db->guardarUsuario($usuario, $db);
+	 $usuarioGuardado = $db->guardarUsuario($usuario, $db); //devuelve un usuario como array
+                                                          //$usuario y $db son objetos
+
+   // var_dump($usuarioGuardado); exit;
 
 	 $auth->logueo($usuarioGuardado['id']);
 

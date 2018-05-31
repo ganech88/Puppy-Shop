@@ -70,7 +70,7 @@ class Validator {
      $arrayADevolver['email'] = 'Este email no está registrado';
    } else {
 
-      if (!password_verify($password, $usuario->getPassword())) {
+      if (!password_verify($password, $usuario->getPassword())) {  
          $arrayADevolver['password'] = "Credenciales incorrectas";
        }
     }

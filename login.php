@@ -1,7 +1,9 @@
 <?php
-  header('location:migracion.php');
-
 	require_once('soporte.php');
+
+  if (!$db->conexion()) {
+    header("location: migracion.php");
+  }
 
 	if ($auth->estaLogueado()) {
 		header('location: perfilDeUsuario.php');
@@ -23,10 +25,13 @@
 
 			// Seteo la cookie
 			if (isset($_POST["remember"])) {
-	        setcookie('id', $usuario->getId(), time() + 3600 * 24 * 30);
+
+					setcookie('id', $usuario->getId(), time() + 3600 * 24 * 30);
+
 	      }
 
-			$auth->logueo($usuario->getId());
+			 $auth->logueo($usuario->getId());
+
 
 			// header('location: perfilDeUsuario.php');
 			// exit;

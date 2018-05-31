@@ -34,6 +34,7 @@
 					`domicilio` VARCHAR(50) NULL,
 					`email` VARCHAR(50) NOT NULL,
 					`password` VARCHAR(100) NOT NULL,
+					`foto` VARCHAR(50) NOT NULL,
 					PRIMARY KEY (`id`)
 				)";
 
@@ -61,7 +62,7 @@
 				foreach ($usuariosArray as $unUsuario) {
 					$elUsuario = json_decode($unUsuario);
 
-					$query = "INSERT INTO usuarios(nombre, apellido, telefono, domicilio, email, password) VALUES (:nombre, :apellido, :telefono, :domicilio, :email, :password)";
+					$query = "INSERT INTO usuarios(nombre, apellido, telefono, domicilio, email, password, foto) VALUES (:nombre, :apellido, :telefono, :domicilio, :email, :password, :foto)";
 
 					$stmp = $db->prepare($query);
 
@@ -71,6 +72,7 @@
 					$stmp->bindValue(':domicilio', $elUsuario->direccion, PDO::PARAM_STR);
 					$stmp->bindValue(':email', $elUsuario->email, PDO::PARAM_STR);
 					$stmp->bindValue(':password', $elUsuario->password, PDO::PARAM_STR);
+					$stmp->bindValue(':foto', $elUsuario->foto, PDO::PARAM_STR);
 					$stmp->execute();
 				}
 

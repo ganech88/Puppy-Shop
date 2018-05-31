@@ -1,5 +1,10 @@
 <?php
-	header('location:migracion.php');
+require_once('soporte.php');
+
+if (!$db->conexion()) {
+	header("location: migracion.php");
+}
+
 ?>
 
 <!DOCTYPE html>
