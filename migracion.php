@@ -11,7 +11,7 @@
 
 				$stmp = $db->prepare("CREATE DATABASE puppy_shop_db");
 				$stmp->execute();
-				$status = 'Se creo la base de datos exitosamente';
+				$status = 'Se creó la Base de Datos exitosamente';
 			} catch (PDOException $e) {
 				//$status = $e->getMessage();
 				$status = "No se pudo conectar con el servidor, intente más tarde.";
@@ -41,10 +41,10 @@
 				$stmp = $db->prepare($query);
 				$stmp->execute();
 
-				$status = 'Se creo la tabla de datos exitosamente';
+				$status = 'Se creó la tabla exitosamente';
 			} catch (PDOException $e) {
 				//$status = $e->getMessage();
-				$status = "Base de datos inexistente. Cree primero la base de datos.";
+				$status = "Base de datos inexistente. Por favor, crea primero la Base de Datos.";
 			}
 		}
 
@@ -79,7 +79,7 @@
 				header("location: index.php");
 			} catch (PDOException $e) {
 				//$status = $e->getMessage();
-				$status = "Tabla inexistente. Cree primero la tabla";
+				$status = "Tabla inexistente. Por favor, crea primero la tabla";
 			}
 		}
 	}
@@ -102,8 +102,9 @@
 
 		<div class="container">
 			<div class="barraTitulo">
-	      <h3>Antes de ingresar, debes crear una Base de Datos:</h3>
+	      <h2>Antes de ingresar, debes crear una Base de Datos:</h2>
 	    </div>
+			<br><br>
       <form method="post">
         <div class="row d-flex">
               <div class="col-xs-12 col-md-4 text-center">
@@ -117,7 +118,14 @@
               </div>
           </div>
       </form>
-			<p class="text-center">	<?= $status ?></p>
+
+			<br><br><br><br>
+
+			<span style="color: #dd2222;">
+
+				<h6 class="text-center"><?= $status ?></h6>
+			</span>
+
 		</div>
 
     <!-- Jquery -->
