@@ -78,7 +78,7 @@
           $errores['foto'] = 'el formato no es correcto';
           }
       } else {
-        $errores['foto'] = 'No se subio el archivo';
+        $errores['foto'] = 'No se subió el archivo';
        }
 
      return $errores;

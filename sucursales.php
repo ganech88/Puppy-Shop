@@ -5,6 +5,8 @@ if (!$db->conexion()) {
 	header("location: migracion.php");
 }
 
+$usuario = $db->traerId($_SESSION['id']); //trae al usuario que se logueo como array
+
 ?>
 
 <!DOCTYPE html>

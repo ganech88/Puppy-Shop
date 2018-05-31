@@ -26,7 +26,12 @@
             <a class="nav-link py-1 px-0 px-lg-1 ion-ios-paw-outline" href="preguntas.php">Preguntas Frecuentes</a>
           </li>
           <li class="nav-item mx-1 mx-lg-1 active d-flex justify-content">
-            <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="login.php">Registrate / Iniciar Sesion <span class="sr-only">(current)</span></a>
+            <?php if ($auth->estaLogueado()): ?>
+                <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="login.php"> <?=$usuario->getNombre()?> </a>
+            <?php else: ?>
+              <a class="nav-link py-1 px-0 px-lg-1 borcua navbar-brand ion-ios-paw-outline" href="login.php">Registrate / Iniciar Sesión <span class="sr-only">(current)</span></a>
+            <?php endif; ?>
+
           </li>
         </ul>
 
