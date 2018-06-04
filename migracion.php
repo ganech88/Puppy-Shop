@@ -122,7 +122,6 @@
 			<br><br><br><br>
 
 			<span style="color: #dd2222;">
-
 				<h6 class="text-center"><?= $status ?></h6>
 			</span>
 
